@@ -1,0 +1,61 @@
+﻿@model IEnumerable<CarModel.VehicalModel>
+
+@{
+    ViewBag.Title = "GetAllVehicals";
+}
+<center>
+    <h2 style="background:black" color: white>List  of Parked Vehicals</h2>
+</center>
+<br/>
+
+<p>
+    @Html.ActionLink("Create New", "Vehical")
+    <br/>
+    @Html.ActionLink("Back", "EmployeeDashboard")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PlateNO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.brand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Intime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Outtime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlateNO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Model)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.brand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Intime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Outtime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "VEdit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "VDetails", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "VDelete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

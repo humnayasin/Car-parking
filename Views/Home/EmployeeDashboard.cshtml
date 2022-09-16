@@ -1,0 +1,113 @@
+﻿
+@{
+    ViewBag.Title = "EmployeeDashboard";
+}
+<style>
+
+
+    #img {
+        height: 15rem;
+        width: 100%;
+        opacity: 0.9;
+    }
+</style>
+
+
+<div class="bgimg">
+    <br />
+
+   
+    <div  style=" text-align: center; background-color: pink;">
+       
+            <h2 style="   display:inline-block; color: white; font-family:'sans-serif'">Employee Dashboard</h2>
+          
+               <p style="float:right" ></p> @Html.ActionLink("Logout", "logout","Account")</p>
+
+      <center>
+          <h1 style="color: white">Welcome --@User.Identity.Name   </h1>  
+
+      </center>      
+    
+    </div>
+        
+    <br/>
+
+    <img id="img" src="~/Content/Images/car4.jpg" />
+
+    
+
+</div>
+<br />
+<br />
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card">
+                <img class="card-img-top img-fluid" src="~/Content/Images/car1.jpg" alt="Card image cap">
+                <div class="card-block">
+                    <h4 class="card-title">Total Parking Area</h4>
+                    <center>
+                        <h1>23</h1>
+                    </center>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card">
+                <img class="card-img-top img-fluid" src="~/Content/Images/car1.jpg" alt="Card image cap">
+                <div class="card-block">
+                    <h4 class="card-title">Total Parked Vehicals </h4>
+                    <center>
+                        <h1>@ViewBag.totalcars</h1>
+                    </center>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card">
+                <img class="card-img-top img-fluid" src="~/Content/Images/car1.jpg" alt="Card image cap">
+                <div class="card-block">
+                    <h4 class="card-title">Parking lots left</h4>
+                    <center>
+                        <h1>@ViewBag.left </h1>
+                    </center>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>
+
+<br />
+<br />
+<hr />
+<hr />
+
+@RenderPage("~/Views/Home/Vehical.cshtml")
+
+
+<br />
+<br />
+<hr />
+<hr />
+
+<center>
+    <h2 style=" background-color: black; color: white; font-family:'sans-serif'">Click To View List of PARKED VEHICALS</h2>
+
+    <button onclick="location.href='GetAllVehicals'" type="button" class="btn btn-outline-warning" data-mdb-ripple-color="dark">Car list</button>
+
+</center>
+
+
+
+
+
